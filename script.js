@@ -87,7 +87,7 @@
 
 
 
-      let tooltip = d3.select('#tooltip') // 15.3
+      let tooltip = d3.select('#tooltip,.tooltip') // 15.3
     
       let generateScales = () => {
 
@@ -122,13 +122,13 @@
                     .attr('fill', (item) => { // 8
                         variance = item['variance'] // 8.1
                         if(variance <= -1) { // 8.2
-                          return 'SteelBlue'
+                          return '#92c5de'
                         } else if (variance <= 0) {
-                          return 'LightSteelBlue'
+                          return '#d1e5f0'
                         } else if (variance <= 1) {
-                          return 'Orange'
+                          return '#fddbc7'
                         } else {
-                          return 'red'
+                          return '#f4a582'
                         }
                     })
                     .attr('data-year', (item) => { // 9.1
@@ -158,7 +158,7 @@
                           'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'Ocober', 'November', 'December'
                         ]
 
-                        tooltip.text(item['year'] + ' ' + monthNames[item['month'] -1 ] // 15.8
+                        tooltip.text(monthNames[item['month'] -1 ] + ' ' + item['year']// 15.8
                             + ' - ' + (baseTemperature + item['variance']).toFixed(3) + ' (' + item['variance'] + ')')
                         
                         tooltip.attr('data-year', item['year'])
