@@ -14,22 +14,36 @@
 </head>
 <body>
     <h1 id="title">Heat Map</h1>
-    <h4 id="description">description</h4>
-    <div id="tooltip"></div>
+    <h4 id="description">Hover to see year, month - exact temperature and variance from monthly average in degree celsius</h4>
+    <!--<div id="tooltip"></div>-->
 
-    </divv>
-    <svg id="canvas"></svg>
-    <svg id="legend"> <!-- 14 -->
-      <rect width="30", height="30", x="0", y="0" fill="steelBlue" /> <!-- 14.1 -->
-      <text x="40", y="20">-1 or less</text> <!-- 14.2 -->
-      <rect width="30", height="30", x="0", y="30" fill="lightSteelBlue" />
-      <text x="40", y="50">avg or less</text>
-      <rect width="30", height="30", x="0", y="60" fill="orange" />
-      <text x="40", y="80">above avg</text>
-      <rect width="30", height="30", x="0", y="90" fill="red" />
-      <text x="40", y="110">+1 or more</text>
-      
-    </svg>
+    <div class="flex-container">
+     
+      <svg id="legend" class="flex-container"> <!-- 14 -->
+        <rect width="1200" height="280" x="0" y="0" fill="#dbe4f0"> </rect>
+        <g class="legend-item">
+          <rect class='legend' width="30", height="30", x="10", y="15" fill="#92c5de" /> <!-- 14.1 -->
+          <text x="50", y="35">-1 or less</text> <!-- 14.2 -->
+        </g>
+        <g class="legend-item">
+          <rect class='legend' width="30", height="30", x="10", y="45" fill="#d1e5f0" />
+          <text x="50", y="65">avg or less</text>
+        </g>
+        <g class="legend-item">
+          <rect class='legend' width="30", height="30", x="10", y="75" fill="#fddbc7" />
+          <text x="50", y="95">above avg</text>
+        </g>
+        <g class="legend-item">
+          <rect class='legend' width="30", height="30", x="10", y="105" fill="#f4a582" />
+          <text x="50", y="125">+1 or more</text>
+        </g>
+        <g>
+          <text x="380" y="90" id="tooltip" style="background-color: blue;" fill="black"></text>
+        </g>
+     </svg>
+
+      <svg id="canvas"></svg>
+    </div>
 </body>
 <script defer src="script.js"></script>
 <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
