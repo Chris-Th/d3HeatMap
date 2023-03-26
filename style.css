@@ -7,6 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100%;
+  font-family: Tahoma, Verdana, sans-serif;
 }
 svg {
   background-color: seashell;
@@ -19,4 +20,23 @@ svg {
   visibility: hidden; /* 15.2 */
   height: auto;
   width: auto;
+  font-size: 30px;
+  text-align: center;
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#legend {
+  min-width: 1080px;
+  padding: 60px;
+  padding-bottom: 0;
+  height: auto;
+}
+.legend-item {
+  padding:10px;
+  margin: 10px;
+}
+
